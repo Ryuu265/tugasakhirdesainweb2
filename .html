@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galeri Kota Bunga - Ngalam Kipa!</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Inter untuk tampilan modern -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        /* Mengubah latar belakang ke Biru Muda Pucat yang senada dengan warna Arema */
+        background-color: #e6f0fa;
+      }
+      .card-img-top-fixed {
+        height: 200px;
+        object-fit: cover;
+        border-top-left-radius: 0.375rem;
+        border-top-right-radius: 0.375rem;
+      }
+      /* Tema Khas Malang/Arema: Biru Tua & Emas */
+      .navbar-dark.bg-arema {
+        background-color: #003366 !important;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      }
+      .text-kendedes {
+        color: #ffcc00 !important; /* Warna Emas/Kuning Khas Arema */
+        font-weight: 700;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+      }
+      /* Warna Biru Arema untuk teks di latar belakang putih (Digunakan pada Judul) */
+      .text-arema {
+        color: #003366 !important;
+      }
+      /* Warna latar belakang Emas/Kuning terang untuk form (BARU) */
+      .bg-arema-light-gold {
+        background-color: #fff9e6 !important;
+      }
+
+      /* HERO SECTION */
+      .hero-section {
+        /* Placeholder diganti menjadi "GUNUNG BROMO SUNRISE" untuk kesan visual Ngalam */
+        background: url("https://placehold.co/1200x600/003366/FFCC00?text=GUNUNG+BROMO+SUNRISE")
+          center/cover no-repeat;
+        height: 60vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+      }
+      .hero-overlay {
+        /* Overlay sedikit digelapkan untuk meningkatkan kontras teks */
+        background: rgba(0, 0, 0, 0.55);
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+      }
+      .hero-overlay h1,
+      .hero-overlay p {
+        text-shadow: 0 3px 6px rgba(0, 0, 0, 0.9);
+      }
+      .card {
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        border: none;
+        border-radius: 0.75rem;
+        overflow: hidden;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 51, 102, 0.3);
+      }
+      .btn-kipa {
+        background-color: #ffcc00; /* Latar Belakang Emas */
+        color: #003366; /* Teks Biru Tua */
+        font-weight: bold;
+        transition: background-color 0.2s;
+      }
+      .btn-kipa:hover {
+        background-color: #e6b800;
+        color: #003366;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar Khas Arema -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-arema">
+      <div class="container">
+        <a class="navbar-brand text-kendedes" href="#"
+          >NGALAM KIPA! (Malang Keren)</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#galeri">Galeri</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#form-pendaftaran">Daftar Wisata</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="hero-overlay">
+        <h1 class="display-4 fw-bold">Selamat Datang di Kota Bunga</h1>
+        <p class="lead">
+          Menikmati keindahan Malang dari Kuliner, Alam, hingga Budaya
+        </p>
+        <a href="#form-pendaftaran" class="btn btn-kipa btn-lg mt-3"
+          >Rencanakan Liburanmu Sekarang</a
+        >
+      </div>
+    </section>
+
+    <!-- KONTEN UTAMA: GALERI -->
+    <div class="container mt-5" id="galeri">
+      <!-- Judul utama sekarang menggunakan warna Biru Arema -->
+      <h2 class="display-5 text-center text-arema mb-2">
+        Sugeng Rawuh ing Kota Bunga
+      </h2>
+      <p class="text-center text-muted mb-5">
+        Potret Keindahan, Kuliner, dan Sejarah Khas *Ngalam* (Malang)
+      </p>
+
+      <div class="row" id="card-gallery">
+        <!-- Data untuk 9 Kartu Galeri -->
+      </div>
+    </div>
+
+    <!-- SEKSI PENDAFTARAN -->
+    <!-- Mengganti bg-white dengan bg-arema-light-gold -->
+    <div
+      class="container my-5 p-4 p-md-5 bg-arema-light-gold shadow-lg rounded-3"
+      id="form-pendaftaran"
+    >
+      <h3 class="mb-4 text-center text-arema">
+        Daftar Kunjungan Wisata ke Malang
+      </h3>
+      <p class="text-center text-muted">
+        Isi formulir singkat di bawah ini untuk mendapatkan rekomendasi wisata
+        terbaik!
+      </p>
+      <!-- Form dengan validasi Bootstrap -->
+      <form class="row g-3 needs-validation" novalidate>
+        <div class="col-md-6">
+          <label for="namaLengkap" class="form-label">Nama Lengkap</label>
+          <input
+            type="text"
+            class="form-control"
+            id="namaLengkap"
+            required
+            placeholder="Contoh: Bima Sakti"
+          />
+          <div class="invalid-feedback">Nama wajib diisi.</div>
+        </div>
+
+        <div class="col-md-6">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            required
+            placeholder="Contoh: bima@example.com"
+          />
+          <div class="invalid-feedback">Format email tidak valid.</div>
+        </div>
+
+        <div class="col-md-12">
+          <label for="minatWisata" class="form-label">Minat Wisata Utama</label>
+          <select class="form-select" id="minatWisata" required>
+            <option selected disabled value="">Pilih...</option>
+            <option>Kuliner Khas</option>
+            <option>Wisata Alam (Bromo/Pantai)</option>
+            <option>Edukasi & Theme Park (Jatim Park)</option>
+            <option>Sejarah & Budaya</option>
+          </select>
+          <div class="invalid-feedback">Pilih salah satu minat wisata.</div>
+        </div>
+
+        <div class="col-12 mt-4 text-center">
+          <!-- Tombol Emas dengan Teks Biru Tua -->
+          <button type="submit" class="btn btn-kipa px-5">Daftar Rek!</button>
+          <div class="mt-3">
+            <small
+              class="text-success"
+              id="successMessage"
+              style="display: none"
+            >
+              Pendaftaran berhasil! Kami akan segera menghubungi Anda. Ngalam
+              Kipa!
+            </small>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Footer Khas Malang (Biru Tua) -->
+    <footer class="bg-arema text-white py-4 mt-5">
+      <div class="container text-center">
+        <p class="mb-0">
+          Dibuat dengan cinta untuk Malang.
+          <span class="text-kendedes fw-bold">Salam Satu Jiwa!</span>
+        </p>
+        <small>&copy; 2024 Galeri Kota Bunga. Versi Ngalam Kipa 1.0</small>
+      </div>
+    </footer>
+
+    <!-- Modal untuk Detail Galeri Kuliner Khas Malang -->
+    <div
+      class="modal fade"
+      id="photoCarouselModal"
+      tabindex="-1"
+      aria-labelledby="carouselModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-arema text-white">
+            <h5 class="modal-title" id="carouselModalLabel">
+              Galeri Detail Kuliner dan Ikon Malang
+            </h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="modal-body p-0">
+            <div id="photoCarousel" class="carousel slide" data-bs-ride="false">
+              <div class="carousel-indicators">
+                <!-- Indikator akan diisi oleh JavaScript -->
+              </div>
+
+              <div class="carousel-inner">
+                <!-- Konten Carousel akan diisi oleh JavaScript -->
+              </div>
+
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#photoCarousel"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#photoCarousel"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="modal-footer justify-content-center">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Tutup Galeri
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Data Kartu dan Carousel
+      const malangData = [
+        {
+          title: "Bakso Malang",
+          text: "Makanan wajib coba saat ke Ngalam, lengkap dengan tahu, siomay, dan pentol.",
+          img: "https://raw.githubusercontent.com/Ryuu265/tugasakhirdesainweb2/refs/heads/main/84-bakso-malang-ala-mamang-yang-lewat-depan-rumah-foto-resep-utama.jpg",
+          caption: {
+            title: "Bakso Malang: Sajian Paling Legendaris",
+            desc: "Bakso di Malang selalu disajikan dengan kuah kaya rasa, taburan bawang goreng, dan irisan daun seledri. Jangan lupa tambahkan sambal pedas!",
+          },
+        },
+        {
+          title: "Cwie Mie",
+          text: "Mie ayam gurih dengan ayam cincang lembut khas Malang yang disajikan kering.",
+          img: "https://raw.githubusercontent.com/Ryuu265/tugasakhirdesainweb2/refs/heads/main/cwie-mie.jpg",
+          caption: {
+            title: "Cwie Mie: Mirip Pangsit Mie Ayam",
+            desc: "Cwie Mie adalah versi Malang dari mie ayam. Kunci utamanya terletak pada ayam cincang yang gurih dan tekstur mie yang kenyal.",
+          },
+        },
+        {
+          title: "Apel Malang",
+          text: "Buah ikonik Kota Batu dan Kabupaten Malang. Rasanya manis, asam, dan segar.",
+          img: "https://raw.githubusercontent.com/Ryuu265/tugasakhirdesainweb2/refs/heads/main/apel-malang.jpg",
+          caption: {
+            title: "Apel Malang: Buah Khas yang Menyegarkan",
+            desc: "Apel bukan hanya buah, tapi juga ikon pariwisata. Kamu bisa memetik sendiri di kebun-kebun apel daerah Batu.",
+          },
+        },
+        {
+          title: "Gunung Bromo",
+          text: "Surganya matahari terbit (sunrise) yang dingin dan menantang.",
+          img: "https://raw.githubusercontent.com/Ryuu265/tugasakhirdesainweb2/refs/heads/main/96d60356-f54f-4b9d-a5af-4cbc8c24f3c7_43.jpeg",
+          caption: {
+            title: "Gunung Bromo: Keajaiban Alam Jawa Timur",
+            desc: "Meski secara administratif di 4 kabupaten, Malang adalah gerbang utama ke lautan pasir dan kawah Bromo yang menakjubkan.",
+          },
+        },
+        // Kartu Sejarah: Candi Singosari (TETAP)
+        {
+          title: "Candi Singosari",
+          text: "Peninggalan bersejarah Kerajaan Singasari, dikenal dengan Patung Dwarapala raksasa.",
+          img: "https://raw.githubusercontent.com/Ryuu265/tugasakhirdesainweb2/refs/heads/main/Candi_Singosari_B.jpeg", // Cokelat (nuansa batu kuno)
+          caption: {
+            title: "Candi Singosari: Warisan Raja Kertanagara",
+            desc: "Candi ini didirikan sebagai penghormatan terakhir untuk Raja Kertanagara, raja terakhir Singasari. Wajib dikunjungi pecinta sejarah.",
+          },
+        },
+
+        {
+          title: "Pantai Sindangbiru",
+          text: "Pantai yang berada di Malang Selatan",
+          img: "https://raw.githubusercontent.com/Ryuu265/tugasakhirdesainweb2/refs/heads/main/Pantai-Sendang-Biru.jpg", // Ungu (nuansa malam/lampu)
+          caption: {
+            title: "Pantai Sindang biru",
+            desc: "Nama 'Sendang Biru' sendiri diambil dari keberadaan sendang (mata air) yang berjarak sekitar 1 kilometer dari arah barat pantai, dengan air yang berwarna biru dan jernih, yang menjadi sumber air bagi warga sekitar.",
+          },
+        },
+        // Kartu REKREASI BARU: Taman Selecta (MENGGANTIKAN Candi Badut)
+        {
+          title: "Taman Rekreasi Selecta",
+          text: "Taman bunga legendaris dengan kolam renang alami dan spot foto bunga warna-warni.",
+          img: "https://raw.githubusercontent.com/Ryuu265/tugasakhirdesainweb2/refs/heads/main/2311-657c06762d169.jpeg", // Hijau (nuansa taman/kebun)
+          caption: {
+            title: "Selecta: Sejarah dan Bunga Kota Batu",
+            desc: "Sudah ada sejak zaman Belanda, Selecta adalah taman rekreasi air dan bunga tertua di Batu yang tetap ramai sampai sekarang. Cocok untuk bersantai.",
+          },
+        },
+        // Kartu Sejarah: Candi Sumberawan (TETAP)
+        {
+          title: "Candi Sumberawan",
+          text: "Satu-satunya candi berbentuk stupa di Jawa Timur, peninggalan Majapahit di tengah mata air jernih.",
+          img: "https://raw.githubusercontent.com/Ryuu265/tugasakhirdesainweb2/refs/heads/main/candi-sumberawan.jpg", // Hijau gelap (nuansa alam/sumber air)
+          caption: {
+            title: "Candi Sumberawan: Stupa di Tengah Sumber Air",
+            desc: "Candi Buddha ini terletak di daerah pegunungan Singosari. Candi ini unik karena bentuknya stupa dan dikelilingi sumber air yang sangat jernih.",
+          },
+        },
+        {
+          title: "Kopi Khas Malang",
+          text: "Kopi robusta dari lereng pegunungan, dengan rasa yang kuat dan aroma khas.",
+          img: "https://raw.githubusercontent.com/Ryuu265/tugasakhirdesainweb2/refs/heads/main/f436c3820947997c46aab520781c2a36.jpg_720x720q80.jpg",
+          caption: {
+            title: "Kopi Robusta Pegunungan",
+            desc: "Malang memiliki banyak perkebunan kopi di dataran tinggi, menghasilkan biji kopi robusta berkualitas yang wajib dicoba saat mampir.",
+          },
+        },
+      ];
+
+      // Fungsi untuk menghasilkan kartu galeri
+      function generateCards() {
+        const galleryContainer = document.getElementById("card-gallery");
+        let htmlContent = "";
+
+        malangData.forEach((data, index) => {
+          htmlContent += `
+            <!-- CARD ${index + 1} -->
+            <div class="col-sm-6 col-md-4 mb-4">
+              <div class="card h-100 shadow-sm"
+                   data-bs-toggle="modal"
+                   data-bs-target="#photoCarouselModal"
+                   data-slide-index="${index}"
+                   style="cursor: pointer;">
+                <img src="${data.img}"
+                     class="card-img-top card-img-top-fixed"
+                     alt="${data.title}"
+                     onerror="this.onerror=null;this.src='https://placehold.co/400x200/cccccc/333333?text=Gambar+Gagal+Dimuat';" />
+                <div class="card-body p-3">
+                  <h5 class="card-title text-arema fw-bold">${data.title}</h5>
+                  <p class="card-text text-muted">${data.text}</p>
+                </div>
+              </div>
+            </div>
+          `;
+        });
+
+        galleryContainer.innerHTML = htmlContent;
+      }
+
+      // Fungsi untuk menghasilkan konten carousel dan indikator
+      function generateCarouselContent() {
+        const carouselInner = document.querySelector(
+          "#photoCarousel .carousel-inner"
+        );
+        const carouselIndicators = document.querySelector(
+          "#photoCarousel .carousel-indicators"
+        );
+
+        let innerHtml = "";
+        let indicatorsHtml = "";
+
+        malangData.forEach((data, index) => {
+          const activeClass = index === 0 ? "active" : "";
+
+          // Carousel Inner (Slides)
+          innerHtml += `
+            <div class="carousel-item ${activeClass}">
+              <img src="${data.img.replace(
+                "400x200",
+                "800x600"
+              )}" class="d-block w-100" alt="${data.title}"
+                   onerror="this.onerror=null;this.src='https://placehold.co/800x600/cccccc/333333?text=Gambar+Gagal+Dimuat';" />
+              <div
+                class="carousel-caption d-block text-white bg-dark bg-opacity-75 p-3"
+              >
+                <h6 class="mb-1">${data.caption.title}</h6>
+                <small>${data.caption.desc}</small>
+              </div>
+            </div>
+          `;
+
+          // Carousel Indicators
+          indicatorsHtml += `
+            <button
+              type="button"
+              data-bs-target="#photoCarousel"
+              data-bs-slide-to="${index}"
+              class="${activeClass}"
+              aria-current="${index === 0 ? "true" : "false"}"
+              aria-label="Slide ${index + 1}"
+            ></button>
+          `;
+        });
+
+        carouselInner.innerHTML = innerHtml;
+        carouselIndicators.innerHTML = indicatorsHtml;
+      }
+
+      // Panggil fungsi untuk menghasilkan konten saat DOM siap
+      document.addEventListener("DOMContentLoaded", () => {
+        generateCards();
+        generateCarouselContent();
+      });
+
+      // FUNGSI INI MEMASTIKAN CAROUSEL LANGSUNG KE SLIDE YANG TEPAT
+      const photoModal = document.getElementById("photoCarouselModal");
+
+      photoModal.addEventListener("show.bs.modal", (event) => {
+        const button = event.relatedTarget;
+        const slideIndex = button.getAttribute("data-slide-index");
+
+        const carouselElement = document.getElementById("photoCarousel");
+        // Gunakan fungsi internal Bootstrap Carousel instance untuk mengontrol slide
+        const carousel = bootstrap.Carousel.getOrCreateInstance(
+          carouselElement,
+          {
+            interval: false, // Nonaktifkan auto-slide
+          }
+        );
+
+        if (slideIndex !== null) {
+          carousel.to(parseInt(slideIndex));
+        }
+      });
+
+      // FUNGSI INI MENGAKTIFKAN VALIDASI SISI KLIEN BOOTSTRAP
+      // Ambil semua form yang ingin kita terapkan custom Bootstrap validation style
+      const forms = document.querySelectorAll(".needs-validation");
+
+      // Loop di atasnya dan cegah pengiriman jika tidak valid
+      Array.from(forms).forEach((form) => {
+        form.addEventListener(
+          "submit",
+          (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            const successMessage = document.getElementById("successMessage");
+
+            if (form.checkValidity()) {
+              // Jika valid, tampilkan pesan sukses
+              form.classList.remove("was-validated");
+              form.reset();
+              successMessage.style.display = "block";
+              setTimeout(() => {
+                successMessage.style.display = "none";
+              }, 4000); // Sembunyikan pesan setelah 4 detik
+            } else {
+              // Jika tidak valid, tambahkan kelas validasi
+              form.classList.add("was-validated");
+              successMessage.style.display = "none";
+            }
+          },
+          false
+        );
+      });
+    </script>
+  </body>
+</html>
